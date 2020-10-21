@@ -460,6 +460,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./source/displayData.js":
+/*!*******************************!*\
+  !*** ./source/displayData.js ***!
+  \*******************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst displayData = (temp, location, descrptn, humidity, date, unit_icon) => {\r\n  const container = document.querySelector('#weather-data');\r\n  container.innerHTML = `\r\n    <p class=\"data-obj\" id=\"temper\">${temp}&#176;${unit_icon}</p>\r\n    <p class=\"data-obj\" id=\"location\">${location}</p>\r\n    <p class=\"data-obj\" id=\"date\">${date}</p>\r\n    <p class=\"data-obj\" id=\"descrptn\">${descrptn}</p>\r\n    <p class=\"data-obj\" id=\"humidity\">${humidity}</p>\r\n  `;\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (displayData);\n\n//# sourceURL=webpack://WorldWeatherApp/./source/displayData.js?");
+
+/***/ }),
+
 /***/ "./source/index.js":
 /*!*************************!*\
   !*** ./source/index.js ***!
@@ -469,7 +483,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/esm/format/index.js\");\n\r\n\r\nconst displayData = (temp, location, descrptn, humidity, date, unit_icon) => {\r\n  const container = document.querySelector('#weather-data');\r\n  container.innerHTML = `\r\n    <p class=\"data-obj\" id=\"temper\">${temp}&#176;${unit_icon}</p>\r\n    <p class=\"data-obj\" id=\"location\">${location}</p>\r\n    <p class=\"data-obj\" id=\"date\">${date}</p>\r\n    <p class=\"data-obj\" id=\"descrptn\">${descrptn}</p>\r\n    <p class=\"data-obj\" id=\"humidity\">${humidity}%</p>\r\n  `;\r\n};\r\n\r\nconst formatData = (response, unit) => {\r\n  const temp = response.main.temp;\r\n  const location = `${response.name}, ${response.sys.country}`;\r\n  const descrptn = response.weather[0].description;\r\n  const humidity = `Hum: ${response.main.humidity} %`;\r\n  const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.default)(new Date(), 'do, MMM, yyyy');\r\n  let unit_icon = (unit == 'metric') ? 'C' : 'F'\r\n  displayData(temp, location, descrptn, humidity, date, unit_icon);\r\n};\r\n\r\nconst getLocation = async (unit) => {\r\n  const locationInpt = document.querySelector('#locationInpt');\r\n  const loc = locationInpt.value;\r\n  try{\r\n    const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=2c8924de1b3de10d32a5b5a33e4055c1&units=${unit}`;\r\n    const locationData = await fetch(url);\r\n    const response = await locationData.json();\r\n    console.log(response);\r\n    locationInpt.value = '';\r\n    formatData(response, unit);\r\n  }\r\n  catch(err) {\r\n    console.log(err);\r\n  }\r\n};\r\n\r\nconst render = () => {\r\n  const search_c = document.querySelector('#search-c');\r\n  const search_f = document.querySelector('#search-f');\r\n  search_c.addEventListener('click', () => {\r\n    getLocation('metric');\r\n  });\r\n  search_f.addEventListener('click', () => {\r\n    getLocation('imperial');\r\n  });\r\n};\r\n\r\nrender();\n\n//# sourceURL=webpack://WorldWeatherApp/./source/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./source/utils.js\");\n\r\n\r\nconst render = () => {\r\n  const search_c = document.querySelector('#search-c');\r\n  const search_f = document.querySelector('#search-f');\r\n  search_c.addEventListener('click', () => {\r\n    (0,_utils__WEBPACK_IMPORTED_MODULE_0__.default)('metric');\r\n  });\r\n  search_f.addEventListener('click', () => {\r\n    (0,_utils__WEBPACK_IMPORTED_MODULE_0__.default)('imperial');\r\n  });\r\n};\r\n\r\nrender();\n\n//# sourceURL=webpack://WorldWeatherApp/./source/index.js?");
+
+/***/ }),
+
+/***/ "./source/utils.js":
+/*!*************************!*\
+  !*** ./source/utils.js ***!
+  \*************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/esm/format/index.js\");\n/* harmony import */ var _displayData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayData */ \"./source/displayData.js\");\n\r\n\r\n\r\nconst formatData = (response, unit) => {\r\n  const temp = response.main.temp;\r\n  const location = `${response.name}, ${response.sys.country}`;\r\n  const descrptn = response.weather[0].description;\r\n  const humidity = `Hum: ${response.main.humidity} %`;\r\n  const date = (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.default)(new Date(), 'do, MMM, yyyy');\r\n  let unit_icon = (unit == 'metric') ? 'C' : 'F'\r\n  ;(0,_displayData__WEBPACK_IMPORTED_MODULE_1__.default)(temp, location, descrptn, humidity, date, unit_icon);\r\n};\r\n\r\nconst getLocation = async (unit) => {\r\n  const locationInpt = document.querySelector('#locationInpt');\r\n  const loc = locationInpt.value;\r\n  try{\r\n    const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=2c8924de1b3de10d32a5b5a33e4055c1&units=${unit}`;\r\n    const locationData = await fetch(url);\r\n    const response = await locationData.json();\r\n    console.log(response);\r\n    locationInpt.value = '';\r\n    formatData(response, unit);\r\n  }\r\n  catch(err) {\r\n    console.log(err);\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getLocation);\n\n//# sourceURL=webpack://WorldWeatherApp/./source/utils.js?");
 
 /***/ })
 

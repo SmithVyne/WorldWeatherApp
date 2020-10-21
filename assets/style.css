@@ -70,6 +70,7 @@ body {
   margin: 0;
   margin-top: 15px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
 }
 
 #app-title {
@@ -83,10 +84,6 @@ body {
 
 #location {
   font-size: 36px;
-}
-
-#date {
-  font-size: 22px;
 }
 
 #copyright {

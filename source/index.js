@@ -1,5 +1,6 @@
 import getLocation from './utils';
 import '../assets/style.css';
+import '../assets/weather-icon.png';
 
 const render = () => {
   const searchCel = document.querySelector('#search-c');

@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8b62d;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  padding-top: 15vh;
+}
+
+#locationElmt, #locationInpt {
+  width: 300px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 27px;
+}
+
+#locationElmt {
+  position: relative;
+}
+
+#locationInpt {
+  padding-left: 35px;
+  color: black;
+  outline: none;
+  border: none;
+}
+
+.search {
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 1px;
+  background-color: rgb(230, 13, 13);
+  height: 49px;
+  width: 45px;
+  cursor: pointer;
+}
+
+#search-f {
+  border-radius: 0 15px 15px 0;
+  right: 0;
+}
+
+#search-c {
+  right: 46px;
+}
+
+#weath-img {
+  width: 260px;
+  height: 260px;
+}
+
+#weather-data {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.data-obj, #app-title {
+  font-size: 27px;
+  margin: 0;
+  margin-top: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#app-title {
+  color: black;
+}
+
+#temper {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#location {
+  font-size: 36px;
+}
+
+#date {
+  font-size: 22px;
+}
+
+#copyright {
+  font-style: italic;
+  font-family: cursive;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  background-color: rgba(31, 19, 19, 0.774);
+  color: #f7a90f;
+}

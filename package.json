@@ -1,0 +1,33 @@
+{
+  "name": "WorldWeatherApp",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmithVyne/MyWeatherApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SmithVyne/MyWeatherApp/issues"
+  },
+  "homepage": "https://github.com/SmithVyne/MyWeatherApp#readme",
+  "devDependencies": {
+    "webpack": "^5.1.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "dependencies": {
+    "css-loader": "^4.3.0",
+    "date-fns": "^2.16.1",
+    "file-loader": "^6.1.0",
+    "style-loader": "^1.2.1"
+  }
+}

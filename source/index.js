@@ -1,12 +1,12 @@
-import getLocation from './utils'
+import getLocation from './utils';
 
 const render = () => {
-  const search_c = document.querySelector('#search-c');
-  const search_f = document.querySelector('#search-f');
-  search_c.addEventListener('click', () => {
+  const searchCel = document.querySelector('#search-c');
+  const searchFah = document.querySelector('#search-f');
+  searchCel.addEventListener('click', () => {
     getLocation('metric');
   });
-  search_f.addEventListener('click', () => {
+  searchFah.addEventListener('click', () => {
     getLocation('imperial');
   });
 };

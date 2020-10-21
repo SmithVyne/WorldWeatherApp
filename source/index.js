@@ -1,4 +1,5 @@
 import getLocation from './utils';
+import '../assets/style.css';
 
 const render = () => {
   const searchCel = document.querySelector('#search-c');

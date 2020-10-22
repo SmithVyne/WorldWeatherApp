@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import displayData from './displayData';
 
 const formatData = (response, unit) => {
-  const { temp } = (unit === 'metric') ? response.main : (response.main * 1.8) + 32;
+  const temp = (unit === 'metric') ? response.main.temp : (response.main.temp * 1.8) + 32;
   const location = `${response.name}, ${response.sys.country}`;
   const descrptn = response.weather[0].description;
   const humidity = `Hum: ${response.main.humidity} %`;

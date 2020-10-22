@@ -3,13 +3,12 @@ import '../assets/style.css';
 import '../assets/weather-icon.png';
 
 const render = () => {
-  const searchCel = document.querySelector('#search-c');
-  const searchFah = document.querySelector('#search-f');
-  searchCel.addEventListener('click', () => {
-    getLocation('metric');
-  });
-  searchFah.addEventListener('click', () => {
-    getLocation('imperial');
+  const searches = document.querySelectorAll('.search');
+  searches.forEach(search => {
+    search.addEventListener('click', (evt) => {
+      const unit = evt.target.getAttribute('unit');
+      getLocation(unit);
+    });
   });
 };
 

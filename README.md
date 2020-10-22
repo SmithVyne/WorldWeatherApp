@@ -21,7 +21,7 @@ Follow the steps below to test the project locally. First ensure you have a vers
 
 1. Clone the repository from a terminal `https://github.com/SmithVyne/WorldWeatherApp.git` and cd into the directory.
 3. Install project dependencies by running `npm install`
-4. Run `npm run webpack` to compile a development build.
+4. Run `npm run build` to compile a production build.
 5. Run `npm run start` to serve the project live on `http://localhost:9000` and voila!!!.
 
 👤 **Smith Nkereuwem**

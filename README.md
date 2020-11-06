@@ -10,6 +10,7 @@
   - The project is hosted [here](https://smithvyne.github.io/WorldWeatherApp/)
 
 ## Technologies
+  - [Open Weather API](https://openweathermap.org/api)
   - [Webpack](https://webpack.js.org/)
   - [Date fns module](https://date-fns.org/)
   - Javascript
